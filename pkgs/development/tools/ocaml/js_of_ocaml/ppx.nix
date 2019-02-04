@@ -8,7 +8,9 @@ stdenv.mkDerivation rec {
 
 	inherit (js_of_ocaml-compiler) version src installPhase meta;
 
-	buildInputs = [ ocaml findlib dune ocaml-migrate-parsetree ppx_tools_versioned js_of_ocaml ];
+	buildInputs = [ ocaml findlib dune ocaml-migrate-parsetree js_of_ocaml ];
+
+	propagatedBuildInputs = [ ppx_tools_versioned ];
 
 	buildPhase = "dune build -p js_of_ocaml-ppx";
 }

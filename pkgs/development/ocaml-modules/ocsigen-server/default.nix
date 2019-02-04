@@ -1,7 +1,7 @@
-{ stdenv, fetchFromGitHub, which, ocaml, findlib, lwt_react, ssl, lwt_ssl
-, lwt_log, ocamlnet, ocaml_pcre, cryptokit, tyxml, xml-light, ipaddr
-, pgocaml, camlzip, ocaml_sqlite3
-, makeWrapper
+{ stdenv, fetchurl, ocaml, findlib, which, react, ssl
+, ocamlnet, ocaml_pcre, cryptokit, tyxml, ipaddr, zlib
+, libev, openssl, ocaml_sqlite3, tree, uutf, makeWrapper, camlp4
+, camlzip, pgocaml, lwt_log, lwt_react, lwt_ssl, xml-light
 }:
 
 if !stdenv.lib.versionAtLeast ocaml.version "4.03"
@@ -13,23 +13,26 @@ let mkpath = p: n:
 in
 
 stdenv.mkDerivation rec {
-  version = "2.11.0";
   name = "ocsigenserver-${version}";
+  version = "2.11.0";
 
-  src = fetchFromGitHub {
-    owner = "ocsigen";
-    repo = "ocsigenserver";
-    rev = version;
-    sha256 = "0y1ngki7w9s10ip7nj9qb7254bd5sp01xxz16sxyj7l7qz603hy2";
+  src = fetchurl {
+    url = "https://github.com/ocsigen/ocsigenserver/archive/${version}.tar.gz";
+    sha256 = "1plvmgbk23kfkfsx1ixlis4ssg71by7m1k2xci2j6fp0gnkdybf3";
   };
 
-  buildInputs = [ which makeWrapper ocaml findlib
-    lwt_react pgocaml camlzip ocaml_sqlite3
+  patches = [
+    ./lwt_react.patch
+    ./version.patch
   ];
 
-  propagatedBuildInputs = [ cryptokit ipaddr lwt_log lwt_ssl ocamlnet
-    ocaml_pcre tyxml xml-light
-  ];
+  buildInputs = [ ocaml which findlib ];
+
+  # TODO: move to buildInputs as many of these as possible
+  propagatedBuildInputs = [ react ssl lwt_react lwt_ssl lwt_log
+  ocamlnet ocaml_pcre cryptokit tyxml ipaddr zlib libev openssl
+  ocaml_sqlite3 tree uutf makeWrapper camlp4 pgocaml camlzip
+  xml-light ];
 
   configureFlags = [ "--root $(out)" "--prefix /" ];
 

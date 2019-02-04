@@ -1,5 +1,5 @@
 { stdenv, fetchurl, ocaml, findlib, ocamlbuild, dune
-, lambdaTerm, cppo, makeWrapper
+, lambdaTerm, cppo, makeWrapper, ncurses
 }:
 
 if !stdenv.lib.versionAtLeast ocaml.version "4.03"
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ makeWrapper ];
   buildInputs = [ ocaml findlib ocamlbuild cppo dune ];
 
-  propagatedBuildInputs = [ lambdaTerm ];
+  propagatedBuildInputs = [ lambdaTerm ncurses ];
 
   inherit (dune) installPhase;
 

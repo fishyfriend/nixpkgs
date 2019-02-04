@@ -320,6 +320,8 @@ let
 
     hex = callPackage ../development/ocaml-modules/hex { };
 
+    hmap = callPackage ../development/ocaml-modules/hmap { };
+
     httpaf = callPackage ../development/ocaml-modules/httpaf { };
 
     inifiles = callPackage ../development/ocaml-modules/inifiles { };
@@ -408,6 +410,7 @@ let
     lwt4 = callPackage ../development/ocaml-modules/lwt/4.x.nix { };
 
     ocaml_lwt = if lib.versionOlder "4.02" ocaml.version then lwt4 else lwt2;
+    lwt = ocaml_lwt;
 
     lwt_camlp4 = callPackage ../development/ocaml-modules/lwt/camlp4.nix { };
 
@@ -550,13 +553,15 @@ let
 
     odoc = callPackage ../development/ocaml-modules/odoc { };
 
-    ojquery = callPackage ../development/ocaml-modules/ojquery {
-      ocaml_lwt = lwt3;
-    };
+    ojquery = callPackage ../development/ocaml-modules/ojquery { };
 
     omd = callPackage ../development/ocaml-modules/omd { };
 
     opam-file-format = callPackage ../development/ocaml-modules/opam-file-format { };
+
+    opium = callPackage ../development/ocaml-modules/opium { };
+
+    opium_kernel = callPackage ../development/ocaml-modules/opium_kernel { };
 
     opti = callPackage ../development/ocaml-modules/opti { };
 

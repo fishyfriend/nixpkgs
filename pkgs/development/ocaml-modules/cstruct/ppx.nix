@@ -11,5 +11,6 @@ buildDunePackage {
   minimumOCamlVersion = "4.02";
 
 	buildInputs = [ ppx_tools_versioned ];
+
 	propagatedBuildInputs = [ cstruct ];
 }

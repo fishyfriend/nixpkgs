@@ -1,0 +1,19 @@
+From 18045ad7f60366a86cac90f2dd6d45d4c1334d32 Mon Sep 17 00:00:00 2001
+From: fishyfriend <fishyfriend@users.noreply.github.com>
+Date: Fri, 1 Feb 2019 19:01:57 -0500
+Subject: [PATCH] fix version for 2.11
+
+---
+ VERSION | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/VERSION b/VERSION
+index 8c269150..6a5fe6e8 100644
+--- a/VERSION
++++ b/VERSION
+@@ -1 +1 @@
+-2.9
++2.11
+-- 
+2.18.1
+
