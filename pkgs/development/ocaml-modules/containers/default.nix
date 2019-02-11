@@ -1,5 +1,5 @@
 { stdenv, fetchFromGitHub, ocaml, findlib, ocamlbuild, cppo, gen, sequence, qtest, ounit, result
-, qcheck, buildDunePackage }:
+, uutf, qcheck, buildDunePackage }:
 
 buildDunePackage rec {
   pname = "containers";
@@ -15,7 +15,7 @@ buildDunePackage rec {
 
   #TODO: check whether qtest and cppo are still needed
   #buildInputs = [ cppo gen sequence qtest ounit qcheck ];
-  buildInputs = [ gen sequence ounit qcheck ];
+  buildInputs = [ gen sequence ounit qcheck uutf ];
 
   propagatedBuildInputs = [ result ];
 
