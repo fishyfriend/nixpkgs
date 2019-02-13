@@ -598,6 +598,10 @@ let
 
     sequence = callPackage ../development/ocaml-modules/sequence { };
 
+    session = callPackage ../development/ocaml-modules/session { };
+    session-cohttp = callPackage ../development/ocaml-modules/session/cohttp.nix { };
+    session-cohttp-lwt = callPackage ../development/ocaml-modules/session/cohttp-lwt.nix { };
+
     spacetime_lib = callPackage ../development/ocaml-modules/spacetime_lib { };
 
     sqlexpr = callPackage ../development/ocaml-modules/sqlexpr { };
