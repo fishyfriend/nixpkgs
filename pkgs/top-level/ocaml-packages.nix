@@ -211,6 +211,8 @@ let
 
     digestif =  callPackage ../development/ocaml-modules/digestif { };
 
+    dispatch = callPackage ../development/ocaml-modules/dispatch { };
+
     doc-ock =  callPackage ../development/ocaml-modules/doc-ock { };
 
     doc-ock-html =  callPackage ../development/ocaml-modules/doc-ock-html { };
