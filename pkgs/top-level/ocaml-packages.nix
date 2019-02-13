@@ -302,6 +302,8 @@ let
       extlib = ocaml_extlib;
     };
 
+    jwt = callPackage ../development/ocaml-modules/jwt { };
+
     dypgen = callPackage ../development/ocaml-modules/dypgen { };
 
     gapi_ocaml = callPackage ../development/ocaml-modules/gapi-ocaml { };
