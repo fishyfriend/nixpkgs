@@ -9,7 +9,7 @@ buildDunePackage rec {
 
 	src = fetchFromGitHub {
 		owner = "rgrinberg";
-		repo = pname;
+		repo = "opium";
 		rev = "v${version}";
 		sha256 = "0vi28a86ir42ijfrs6ji03cyb8yzz2xs9ljngd5jfib480b2fz85";
 	};
