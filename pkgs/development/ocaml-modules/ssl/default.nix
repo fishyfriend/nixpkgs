@@ -1,7 +1,7 @@
-{ stdenv, fetchzip, which, openssl, ocaml, findlib }:
+{ stdenv, buildOcaml, fetchzip, which, openssl, ocaml, findlib }:
 
-stdenv.mkDerivation rec {
-  name = "ocaml${ocaml.version}-ssl-${version}";
+buildOcaml rec {
+  name = "ssl";
   version = "0.5.5";
 
   src = fetchzip {
@@ -16,6 +16,8 @@ stdenv.mkDerivation rec {
   dontAddPrefix = true;
 
   createFindlibDestdir = true;
+
+  hasSharedObjects = true;
 
   meta = {
     homepage = http://savonet.rastageeks.org/;
