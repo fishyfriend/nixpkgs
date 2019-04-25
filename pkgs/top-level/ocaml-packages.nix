@@ -586,6 +586,8 @@ let
 
     ppxlib = callPackage ../development/ocaml-modules/ppxlib { };
 
+    ppxx = callPackage ../development/ocaml-modules/ppxx { };
+
     psmt2-frontend = callPackage ../development/ocaml-modules/psmt2-frontend { };
 
     psq = callPackage ../development/ocaml-modules/psq { };
@@ -613,6 +615,8 @@ let
     tuntap = callPackage ../development/ocaml-modules/tuntap { };
 
     tyxml = callPackage ../development/ocaml-modules/tyxml { };
+
+    typpx = callPackage ../development/ocaml-modules/typpx { };
 
     ulex = callPackage ../development/ocaml-modules/ulex { };
 
