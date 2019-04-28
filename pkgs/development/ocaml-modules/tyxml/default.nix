@@ -10,8 +10,8 @@ buildDunePackage rec {
   version = "4.3.0";
 
   src = fetchzip {
-    url = "http://github.com/ocsigen/tyxml/archive/${version}.tar.gz";
-    sha256 = "0wv19xipkj8l2sks1h53105ywbjwk7q93fb7b8al4a2g9wr109c0";
+    url = "https://github.com/ocsigen/tyxml/archive/${version}.tar.gz";
+    sha256 = "1zrkrmxyj5a2cdh4b9zr9anwfk320wv3x0ynxnyxl5za2ix8sld8";
   };
 
   buildInputs = [ ocaml findlib ocamlbuild ppx_tools_versioned markup ]
