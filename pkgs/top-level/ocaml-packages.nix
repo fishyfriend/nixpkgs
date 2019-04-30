@@ -286,6 +286,8 @@ let
 
     herelib = callPackage ../development/ocaml-modules/herelib { };
 
+    higher = callPackage ../development/ocaml-modules/higher { };
+
     higlo = callPackage ../development/ocaml-modules/higlo { };
 
     imagelib = callPackage ../development/ocaml-modules/imagelib { };
