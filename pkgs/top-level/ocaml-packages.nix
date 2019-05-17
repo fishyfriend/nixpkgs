@@ -212,6 +212,8 @@ let
 
     decompress =  callPackage ../development/ocaml-modules/decompress { };
 
+    delimcc = callPackage ../development/ocaml-modules/delimcc { };
+
     digestif =  callPackage ../development/ocaml-modules/digestif { };
 
     dispatch = callPackage ../development/ocaml-modules/dispatch { };
