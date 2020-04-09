@@ -9,7 +9,7 @@ buildDunePackage rec {
     owner = "ocaml-ppx";
     repo = "ppx_tools_versioned";
     rev = version;
-    sha256 = "01bn8i41caalph3x1hxydk4a3hnzv2m703768cwv49ry0wja77f0";
+    sha256 = "0rh4443l2cgbcmgfka41x1rkiw4mxv7jgrxqhwsffnmy20zzarxq";
   };
 
   buildInputs = [ ocaml findlib ];
